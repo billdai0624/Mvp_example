@@ -4,9 +4,9 @@ package com.example.dai.mvp_example;
  * Created by Dai on 2017/4/8.
  */
 
-public interface PasswordSettingContract {
+public interface RegisterContract {
     interface ViewActions{
-        void onSetPasswordSuccess();
+        void onRegistered(String token);
 
         void showMessage(String message);
     }
@@ -16,6 +16,6 @@ public interface PasswordSettingContract {
 
         void detachView();
 
-        void setPassword(String password, String confirmed_password);
+        void register(String account, String password);
     }
 }
