@@ -1,10 +1,10 @@
-package com.example.dai.mvp_example;
+package com.example.dai.mvp_example.mvp_example;
 
 /**
  * Created by Dai on 2017/4/8.
  */
 
-public interface RegisterContract {
+public interface Ex_RegisterContract {
     interface ViewActions{
         void onRegistered(String token);
 

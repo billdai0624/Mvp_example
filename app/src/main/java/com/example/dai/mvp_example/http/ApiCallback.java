@@ -30,5 +30,5 @@ public abstract class ApiCallback<T> implements Callback<T> {
 
     public abstract void onNoResponse(Throwable throwable);
 
-    public abstract void onTokenExpired();
+    //public abstract void onTokenExpired();
 }

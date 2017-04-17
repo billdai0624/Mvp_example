@@ -1,6 +1,6 @@
 package com.example.dai.mvp_example.http.Api;
 
-import com.example.dai.mvp_example.AccountModel;
+import com.example.dai.mvp_example.mvp_example.Ex_AccountModel;
 import com.example.dai.mvp_example.http.http_response.RegisterResponse;
 
 import retrofit2.Call;
@@ -17,5 +17,5 @@ public interface ExampleApi {
 
     @Headers("Content-Type: application/json")
     @POST(prefix +"/register")
-    Call<RegisterResponse> register(@Body AccountModel body);
+    Call<RegisterResponse> register(@Body Ex_AccountModel body);
 }

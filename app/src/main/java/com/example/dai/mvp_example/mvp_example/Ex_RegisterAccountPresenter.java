@@ -1,4 +1,4 @@
-package com.example.dai.mvp_example;
+package com.example.dai.mvp_example.mvp_example;
 
 import com.example.dai.mvp_example.http.ApiCallback;
 import com.example.dai.mvp_example.http.HttpClient;
@@ -10,11 +10,11 @@ import retrofit2.Response;
  * Created by Dai on 2017/4/8.
  */
 
-public class RegisterAccountPresenter implements RegisterContract.PresenterActions {
-    private AccountModel model;
-    private RegisterContract.ViewActions view;
+public class Ex_RegisterAccountPresenter implements Ex_RegisterContract.PresenterActions {
+    private Ex_AccountModel model;
+    private Ex_RegisterContract.ViewActions view;
 
-    public RegisterAccountPresenter(RegisterContract.ViewActions view) {
+    public Ex_RegisterAccountPresenter(Ex_RegisterContract.ViewActions view) {
         this.view = view;
     }
 
@@ -34,7 +34,7 @@ public class RegisterAccountPresenter implements RegisterContract.PresenterActio
             return;
         }
         if (model == null) {
-            model = new AccountModel(account, password);
+            model = new Ex_AccountModel(account, password);
         }
         else{
             model.setAccount(account);
@@ -70,20 +70,20 @@ public class RegisterAccountPresenter implements RegisterContract.PresenterActio
                 view.showMessage("Network unavailable?");
             }
 
-            @Override
+            /*@Override
             public void onTokenExpired() {
                 if (!isViewAttached()) {
                     return;
                 }
                 //Current token is expired, call updateToken Api
-                /*
+
                 ...
                 ...
                 ...
-                 */
+
                 //Now the token is updated, call register() again
                 register(account, password);
-            }
+            }*/
         });
     }
 

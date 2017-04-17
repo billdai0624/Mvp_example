@@ -18,9 +18,9 @@ public class RequestTokenInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        String token = HttpClient.getToken() == null ? "" : HttpClient.getToken();
-        Request newRequest = request.newBuilder().addHeader("AI-Bike-Token", token).build();
-        Response response = chain.proceed(newRequest);
+        /*String token = HttpClient.getToken() == null ? "" : HttpClient.getToken();
+        Request newRequest = request.newBuilder().addHeader("AI-Bike-Token", token).build();*/
+        Response response = chain.proceed(request);
         //Peek the http response for debugging
         if (BuildConfig.DEBUG) {
             Log.d("HttpResponse", response.peekBody(1024).string());

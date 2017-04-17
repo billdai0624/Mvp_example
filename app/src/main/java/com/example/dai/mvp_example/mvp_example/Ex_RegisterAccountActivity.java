@@ -1,4 +1,4 @@
-package com.example.dai.mvp_example;
+package com.example.dai.mvp_example.mvp_example;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,22 +8,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dai.mvp_example.R;
+
 /**
  * Created by Dai on 2017/4/8.
  */
 
-public class RegisterAccountActivity extends AppCompatActivity implements RegisterContract.ViewActions {
+public class Ex_RegisterAccountActivity extends AppCompatActivity implements Ex_RegisterContract.ViewActions {
     private EditText email;
     private EditText password;
     private TextView token_tv;
-    private RegisterAccountPresenter presenter;
+    private Ex_RegisterAccountPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (presenter == null) {
-            presenter = new RegisterAccountPresenter(this);
+            presenter = new Ex_RegisterAccountPresenter(this);
         }
         email = (EditText) findViewById(R.id.account);
         password = (EditText) findViewById(R.id.password);

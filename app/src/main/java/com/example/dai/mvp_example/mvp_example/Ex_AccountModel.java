@@ -1,4 +1,4 @@
-package com.example.dai.mvp_example;
+package com.example.dai.mvp_example.mvp_example;
 
 import com.example.dai.mvp_example.http.ApiCallback;
 import com.example.dai.mvp_example.http.ServiceFactory;
@@ -9,12 +9,12 @@ import com.google.gson.annotations.SerializedName;
  * Created by Dai on 2017/4/8.
  */
 
-public class AccountModel {
+public class Ex_AccountModel {
     @SerializedName("email")
     private String account;
     private String password;
 
-    public AccountModel(String account, String password) {
+    public Ex_AccountModel(String account, String password) {
         this.account = account;
         this.password = password;
     }
@@ -35,7 +35,7 @@ public class AccountModel {
         this.password = password;
     }
 
-    public void register(AccountModel model, ApiCallback<RegisterResponse> callback){
+    public void register(Ex_AccountModel model, ApiCallback<RegisterResponse> callback){
         ServiceFactory.getExampleApi().register(model).enqueue(callback);
     }
 }
