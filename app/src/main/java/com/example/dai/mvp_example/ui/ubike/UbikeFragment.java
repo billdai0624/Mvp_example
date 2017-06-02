@@ -6,7 +6,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,7 +27,6 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -39,10 +37,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-import static android.support.v4.app.ActivityCompat.*;
+import static android.support.v4.app.ActivityCompat.checkSelfPermission;
 
 /**
  * Created by daijunwei on 2017/6/1.
@@ -144,7 +141,7 @@ public class UbikeFragment extends Fragment implements OnMapReadyCallback, Locat
                 if (lastLocation != null) {
                     moveCameraTo(new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude()));
                 }
-                else{
+                else {
                     moveCameraTo(DEFAULT_POS);
                 }
             }
@@ -152,6 +149,7 @@ public class UbikeFragment extends Fragment implements OnMapReadyCallback, Locat
                 moveCameraTo(DEFAULT_POS);
             }
         }
+        googleMap.setInfoWindowAdapter(new InfoWindowAdapter(getContext()));
         presenter.getNewTaipeiUbikeStations();
     }
 

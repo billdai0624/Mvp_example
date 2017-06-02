@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/infoWindow_stationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        tools:text="台北站"/>
+
+    <View
+        android:id="@+id/infoWindow_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#DDDDDD"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoWindow_availableBikes_title"/>
+
+        <TextView
+            android:id="@+id/infoWindow_availableBikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="61"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/infoWindow_availableSpaces_title"/>
+
+        <TextView
+            android:id="@+id/infoWindow_availableSpaces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/infoWindow_availableBikes_est_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoWindow_availableBikes_est_title"/>
+
+        <TextView
+            android:id="@+id/infoWindow_availableBikes_est"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="5分鐘以內"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/infoWindow_availableSpaces_est_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoWindow_availableSpaces_est_title"/>
+
+        <TextView
+            android:id="@+id/infoWindow_availableSpaces_est"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="5-10分鐘"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/infoWindow_startPoint_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="設為起點"
+            android:textColor="#BB7700"/>
+
+        <Button
+            android:id="@+id/infoWindow_endPoint_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:background="#00ffffff"
+            android:text="設為終點"
+            android:textColor="#00FF00"/>
+    </LinearLayout>
+</LinearLayout>

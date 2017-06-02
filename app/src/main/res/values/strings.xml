@@ -3,4 +3,8 @@
     <string name="bottomNav_ubike">Ubike</string>
     <string name="bottomNav_guide">行程導覽</string>
     <string name="bottomNav_universiade">世大運</string>
+    <string name="infoWindow_availableBikes_title">可借車輛：</string>
+    <string name="infoWindow_availableSpaces_title">可停車位：</string>
+    <string name="infoWindow_availableBikes_est_title">可借預估時間：</string>
+    <string name="infoWindow_availableSpaces_est_title">可停預估時間：</string>
 </resources>
