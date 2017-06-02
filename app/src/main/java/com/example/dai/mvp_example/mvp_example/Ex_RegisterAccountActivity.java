@@ -23,7 +23,7 @@ public class Ex_RegisterAccountActivity extends AppCompatActivity implements Ex_
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.example_main);
         if (presenter == null) {
             presenter = new Ex_RegisterAccountPresenter(this);
         }

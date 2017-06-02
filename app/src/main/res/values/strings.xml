@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">mvp_example</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">AI-Bike</string>
+    <string name="bottomNav_ubike">Ubike</string>
+    <string name="bottomNav_guide">行程導覽</string>
+    <string name="bottomNav_universiade">世大運</string>
 </resources>
