@@ -2,6 +2,7 @@ package com.example.dai.mvp_example.http;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -19,13 +20,14 @@ public class ApiClient {
         client = HttpClient.getOkHttpClient();
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
     }
 
     public static ApiClient getInstance() {
-        if (mInstance == null){
+        if (mInstance == null) {
             synchronized (ApiClient.class) {
                 if (mInstance == null)
                     mInstance = new ApiClient();

@@ -1,6 +1,6 @@
 package com.example.dai.mvp_example.http;
 
-import com.example.dai.mvp_example.http.Api.ExampleApi;
+import com.example.dai.mvp_example.http.api.ExampleApi;
 
 /**
  * Created by Dai on 2017/4/8.

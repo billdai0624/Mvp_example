@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import com.example.dai.mvp_example.GoogleApiManager;
 import com.example.dai.mvp_example.R;
 import com.example.dai.mvp_example.contract.UbikeContract;
+import com.example.dai.mvp_example.model.UbikeModel;
 import com.example.dai.mvp_example.presenter.ubike.UbikePresenter;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -34,6 +35,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -74,7 +78,6 @@ public class UbikeFragment extends Fragment implements OnMapReadyCallback, Locat
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.ubike_mapFragment);
         mapFragment.getMapAsync(this);
-
         return root;
     }
 
@@ -138,17 +141,37 @@ public class UbikeFragment extends Fragment implements OnMapReadyCallback, Locat
         else {
             if (hasGpsPermission()) {
                 Location lastLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
-                moveCameraTo(new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude()));
+                if (lastLocation != null) {
+                    moveCameraTo(new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude()));
+                }
+                else{
+                    moveCameraTo(DEFAULT_POS);
+                }
             }
             else {
                 moveCameraTo(DEFAULT_POS);
             }
         }
+        presenter.getNewTaipeiUbikeStations();
     }
 
     @Override
     public void onLocationChanged(Location location) {
         currentLocation = location;
+    }
+
+    @Override
+    public void onUbikeStationsListReceived(List<UbikeModel> stations) {
+        if (googleMap == null) {
+            return;
+        }
+        googleMap.clear();
+        for (UbikeModel model : stations) {
+            googleMap.addMarker(new MarkerOptions()
+                                        .position(new LatLng(Double.valueOf(model.getLat()),
+                                                             Double.valueOf(model.getLng()))))
+                    .setTag(model);
+        }
     }
 
     private boolean hasGpsPermission() {
